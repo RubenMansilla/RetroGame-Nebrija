@@ -1,228 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Máquina Retro</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-            rel="stylesheet"
-        />
-        <style>
-            /* Estilo General */
-            body {
-                margin: 0;
-                font-family: "Press Start 2P", sans-serif;
-                background-color: #1b0424;
-                color: white;
-                height: 100vh;
-                overflow: hidden;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
 
-            /* Máquina Retro */
-            .retro-machine {
-                width: 100%;
-                height: 100vh;
-                background: linear-gradient(to bottom, #333, #1a1a1a);
-                border: 10px solid #222;
-                border-radius: 15px;
-                position: relative;
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-                display: flex;
-                flex-direction: column;
-                overflow: hidden;
-            }
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro Game Info</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="main.js" defer></script>
+</head>
 
-            /* Pantalla con Scroll */
-            .retro-screen {
-                flex: 1; /* Ocupa todo el espacio disponible */
-                background: rgb(4, 4, 4);
-                border: 5px solid #444;
-                margin: 10px;
-                border-radius: 50px;
-                box-shadow: inset 0 0 10px #000;
-                overflow-y: auto; /* Scroll vertical */
-                color: #00ff00;
-                padding: 50px;
-                font-size: 0.9rem;
-                box-shadow: inset -10px -10px 15px rgb(50, 50, 50);
-                text-align: justify;
-            }
-
-            .retro-screen h2 {
-                text-align: center;
-                color: #ffff00;
-                margin-top: 0;
-                margin-bottom: 80px;
-            }
-
-            .retro-screen p {
-                margin-bottom: 50px;
-                line-height: 1.8;
-            }
-            /* Panel de Botones */
-            .control-panel {
-                height: 15%;
-                background: #222;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                border-top: 5px solid #222;
-            }
-            .joystickCont {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 40%;
-                height: 100%;
-            }
-            .joystick {
-                width: 100px;
-                height: 30%;
-                background: radial-gradient(circle, #ff4057, #c03245);
-                border: 3px solid #900;
-                border-radius: 50%;
-                box-shadow: 0 8px #700;
-                cursor: pointer;
-                transition: transform 0.2s ease-in-out, box-shadow 0.2s;
-                position: relative;
-            }
-
-            .joystick:active {
-                animation: swing 0.5s ease-in-out forwards;
-            }
-
-            @keyframes swing {
-                0% {
-                    transform: rotateX(0deg);
-                }
-                25% {
-                    transform: rotateX(10deg);
-                }
-                50% {
-                    transform: rotateX(-20deg);
-                }
-                75% {
-                    transform: rotateX(5deg);
-                }
-                100% {
-                    transform: rotateX(0deg);
-                }
-            }
-
-            .stick {
-                height: 100px;
-                width: 15%;
-                background-color: #ffffff;
-                position: absolute;
-                left: 45%;
-                top: -75%;
-                transform: translateY(-50%);
-                border-radius: 5px;
-            }
-
-            .ball {
-                background-color: #007a7a;
-                height: 65px;
-                width: 65px;
-                position: absolute;
-                left: 20%;
-                top: -180%;
-                transform: translateY(-50%);
-                border-radius: 100%;
-                background: radial-gradient(circle, #00cfcf, #007a7a);
-            }
-
-            .buttonCont {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-width: 50%;
-                height: 100%;
-            }
-            .button {
-                width: 100px;
-                height: 30%;
-                background: radial-gradient(circle, #ff4057, #c03245);
-                border: 3px solid #900;
-                border-radius: 50%;
-                box-shadow: 0 8px #700;
-                cursor: pointer;
-                transition: transform 0.2s, box-shadow 0.2s;
-                margin: 0 20px; /* Separación entre botones */
-            }
-
-            
-
-            .button.blue {
-                background: radial-gradient(circle, #00cfcf, #007a7a);
-                border: 3px solid #005757;
-                box-shadow: 0 8px #005757;
-            }
-
-            .button.yellow {
-                background: radial-gradient(circle, #ffc545, #c09430);
-                border: 3px solid #8a6c1e;
-                box-shadow: 0 8px #8a6c1e;
-            }
-            .button:active {
-                transform: translateY(4px);
-                box-shadow: 0 2px rgb(31, 31, 31);
-            }
-        </style>
-    </head>
-    <body>
-        <div class="retro-machine">
-            <!-- Pantalla de Contenido -->
-            <div class="retro-screen">
-                <h2>Contenido Retro</h2>
-                <p>
-                    Aquí puedes colocar cualquier contenido que quieras mostrar.
-                    El área es desplazable, por lo que si el contenido excede la
-                    altura de la pantalla, podrás hacer scroll para
-                    visualizarlo.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Praesent at felis ac nisl sagittis cursus. Aenean luctus
-                    neque vitae massa eleifend, in condimentum sapien tempor.
-                    Integer gravida sem vitae mi fermentum, eget volutpat nunc
-                    ullamcorper. Curabitur hendrerit pulvinar est, sit amet
-                    ultricies ex lacinia nec. Sed vitae odio id eros euismod
-                    egestas.
-                </p>
-                <p>
-                    Proin auctor nulla ac diam sodales, nec interdum libero
-                    fermentum. Integer id magna nec ex viverra dictum vel a
-                    risus. Donec convallis congue tellus, ut volutpat magna
-                    ultricies et. Cras pulvinar nisi non tellus varius
-                    efficitur.
-                </p>
-                <p>
-                    Aliquam erat volutpat. Duis non nisi risus. Curabitur eget
-                    risus nunc. Donec sagittis enim eget justo convallis
-                    interdum. In hac habitasse platea dictumst. Vestibulum ac
-                    magna vitae elit feugiat faucibus.
-                </p>
+<body>
+    <div class="retro-machine">
+        <!-- Pantalla de Contenido -->
+        <div class="retro-screen">
+            <div class="title">
+                <h2>Retro Game 2024</h2>
             </div>
 
-            <!-- Panel de Botones -->
-            <div class="control-panel">
-                <div class="joystickCont">
-                    <div class="joystick">
-                        <div class="stick"></div>
-                        <div class="ball"></div>
+            <div class="seccion">
+                <div class="title-sccion">
+                    <h3 class="section-title">Laboratorio</h3>
+                </div>
+
+                <div class="card">
+                    <img src="img/adolescente-guapo-feliz-concepto-tecnologia-vr-equipo-realidad-virtual_161362-561.avif"
+                        alt="Gafas VR" />
+                    <div class="card-content">
+                        <h3>Gafas VR</h3>
+                        <p>Explora el mundo virtual con nuestras gafas de realidad aumentada.</p>
                     </div>
                 </div>
-                <div class="buttonCont">
-                    <div class="button"></div>
-                    <div class="button blue"></div>
-                    <div class="button yellow"></div>
+                <div class="card">
+                    <img src="img/PacMan-el-origen-del-videojuego.jpg" alt="Zona Retro" />
+                    <div class="card-content">
+                        <h3>Zona Retro</h3>
+                        <p>Revive los mejores clásicos de los 80s y 90s en nuestra zona retro.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/H2x1_NSwitch_SuperSmashBrosUltimate_02.jpg" alt="Zona Smash" />
+                    <div class="card-content">
+                        <h3>Zona Smash</h3>
+                        <p>Compite con tus amigos en emocionantes partidas de Super Smash Bros.</p>
+                    </div>
                 </div>
             </div>
+
+            <div class="seccion">
+
+                <div class="title-sccion">
+                    <h3 class="section-title">Aula AB001</h3>
+                </div>
+
+                <div class="card">
+                    <img src="img/peon-blanco-pieza-ajedrez-encuentra-borde-tablero-contra-fondo-generado-ia_70626-15088.avif"
+                        alt="Zona Juegos de Mesa" />
+                    <div class="card-content">
+                        <h3>Zona Juegos de Mesa</h3>
+                        <p>Reúnete para disfrutar de los mejores juegos de mesa clásicos y modernos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="seccion">
+
+                <div class="title-sccion">
+                    <h3 class="section-title">Aula AB002</h3>
+                </div>
+
+                <div class="card">
+                    <img src="img/cibercafe01.jpg" alt="Zona Ciber" />
+                    <div class="card-content">
+                        <h3>Zona Ciber</h3>
+                        <p>Descubre los mejores títulos multijugador en nuestra zona cibernética.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/2402_27-Pokemon-TCG-Pocket-Smartphone-01.webp" alt="Torneo Pokémon TCG" />
+                    <div class="card-content">
+                        <h3>Torneo Pokémon TCG</h3>
+                        <p>Demuestra tus habilidades en el emocionante torneo de cartas de Pokémon.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="seccion">
+
+                <div class="title-sccion">
+                    <h3 class="section-title">Aula AB003</h3>
+                </div>
+
+                <div class="card">
+                    <img src="img/vista-sala-cine-3d_23-2150866067.avif" alt="Zona Cine y Memes" />
+                    <div class="card-content">
+                        <h3>Zona Cine y Memes</h3>
+                        <p>Disfruta de películas icónicas y comparte los mejores memes que conozcas.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="seccion">
+
+                <div class="title-sccion">
+                    <h3 class="section-title">Aula AB004</h3>
+                </div>
+
+                <div class="card">
+                    <img src="img/blackMythWukong.jpg" alt="Zona Juegos Actuales" />
+                    <div class="card-content">
+                        <h3>Zona Juegos Actuales</h3>
+                        <p>Prueba los títulos más recientes y populares del mundo de los videojuegos.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Developed by -->
+            <div class="developed-by">
+                <span>© Developed by Retro Team</span>
+            </div>
         </div>
-    </body>
+
+        <!-- Panel de Botones -->
+        <div class="control-panel">
+            <div class="joystickCont">
+                <div class="joystick">
+                    <div class="stick"></div>
+                    <div class="ball"></div>
+                </div>
+            </div>
+            <div class="buttonCont">
+                <div id="home" class="button"></div>
+                <div id="play" class="button blue"></div>
+                <div id="stop" class="button yellow"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>

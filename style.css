@@ -123,7 +123,7 @@ h3 {
     height: 20px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
-    margin: 10px auto;
+    margin: 0px auto;
     position: relative;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 
@@ -155,7 +155,7 @@ h3 {
     display: flex;
     justify-content: center;
     gap: 100px;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 button {
@@ -317,5 +317,122 @@ body.glitch::before {
     }
     100% {
         transform: translateY(0);
+    }
+}
+
+/* Responsividad: Media Queries para móviles */
+@media (max-width: 1024px) {
+    .game-frame {
+        width: 90%;
+        height: 80%;
+        padding: 3%;
+    }
+
+    .content {
+        gap: 1rem;
+    }
+
+    .ghosts {
+        gap: 1.5rem;
+        margin-top: 20px;
+    }
+
+    .game-title {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-block: 20px;
+    }
+
+    .loading-bar {
+        width: 20rem;
+    }
+
+    .hearts-container {
+        gap: 1rem;
+    }
+
+    .hearts, .hearts-right {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .game-frame {
+        width: 95%;
+        height: auto;
+    }
+
+    .game-title {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .hearts-container {
+        gap: 1rem;
+    }
+
+    .hearts, .hearts-right {
+        gap: 1rem;
+    }
+
+    .loading-bar {
+        width: 18rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-frame {
+        width: 100%;
+        padding: 4%;
+    }
+
+    .game-title {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 0.8rem;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .loading-bar {
+        width: 15rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .hearts-container {
+        justify-content: space-between;
+        width: 100%;
+        display: flex;
+    }
+
+    .hearts, .hearts-right {
+        width: 20%z;
+        width: fit-content;
+        gap: 1rem;
     }
 }
