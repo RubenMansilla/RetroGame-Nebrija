@@ -229,7 +229,7 @@
 
     .card img {
         width: 200px;
-        height: 100px;
+        height: 80%;
         margin-right: 20px;
         border-radius: 10px;
         border: 2px solid #333;
@@ -241,12 +241,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
         flex-wrap: wrap;
+        height: 80%;
     }
 
     .card-content h3 {
-        margin: 0;
         color: #ffcc00;
         font-size: 1.2rem;
         text-shadow: 1px 1px 5px #000;
@@ -273,6 +272,7 @@
     }
 
     .developed-by span {
+        margin-top: 10px;
         font-size: 1.2rem;
         color: #ffff00;
         font-weight: bold;
