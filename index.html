@@ -1,156 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Start</title>
+    <title>Retro Game</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <style>
-        /* Estilo general */
-        body {
-            margin: 0;
-            font-family: 'Press Start 2P', sans-serif;
-            background-color: #1b0424;
-            color: white;
-            overflow: hidden;
-        }
-
-        /* Contenedor principal */
-        .game-container {
-            width: 100%;
-            height: 100vh;
-            background-image: url("istockphoto-1426460007-612x612.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .content {
-            text-align: center;
-            display: flex;
-            gap: 30px;
-            flex-direction: column;
-        }
-
-        /* Fantasmas */
-        .ghosts {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-        }
-
-        .ghost {
-            width: 50px;
-            height: 60px;
-            background-color: #ff8ee3;
-            border-radius: 50% 50% 0 0;
-            position: relative;
-        }
-
-        .ghost::before {
-            content: '';
-            width: 100%;
-            height: 20px;
-            background: white;
-            position: absolute;
-            bottom: 0;
-            border-radius: 50%;
-        }
-
-        /* Título */
-        .game-title {
-            font-size: 3rem;
-            color: white;
-            letter-spacing: 5px;
-            margin-bottom: 20px;
-        }
-
-        /* Barra de carga */
-        .loading-bar {
-            width: 300px;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            margin: 20px auto;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .loading-progress {
-            width: 70%; /* Cambia este valor para simular carga */
-            height: 100%;
-            background: #ff8ee3;
-            border-radius: 10px 0 0 10px;
-            animation: loading 2s infinite ease-in-out;
-        }
-
-        @keyframes loading {
-            0% { width: 0; }
-            100% { width: 100%; }
-        }
-
-        /* Menú de botones */
-        .menu {
-            display: flex;
-            justify-content: center;
-            gap: 100px; /* Más separación entre botones */
-            margin-top: 40px;
-        }
-
-        button {
-            font-family: inherit;
-            background: #ff4057;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 15px 30px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background: #ff6378;
-            transform: scale(1.1);
-        }
-
-        button:nth-child(2) {
-            background: #ffc545;
-        }
-
-        button:nth-child(2):hover {
-            background: #ffd56e;
-        }
-
-        button:nth-child(3) {
-            background: #00cfcf;
-        }
-
-        button:nth-child(3):hover {
-            background: #00e0e0;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
 </head>
+
 <body>
-    <div class="game-container">
-        <div class="content">
-            <div class="ghosts">
-                
+    <main>
+        <div class="game-container">
+            <!-- Marco blanco con fondo -->
+            <div class="game-frame">
+                <div class="content">
+                    <!-- Fantasmas -->
+                    <div class="ghosts">
+                        <img src="img/sans_s_face__high_resolution_render__by_axis_strike_d9udxh2-fullview.png" alt="">
+                        <img src="img/sans_s_face__high_resolution_render__by_axis_strike_d9udxh2-fullview.png" alt="">
+                        <img src="img/sans_s_face__high_resolution_render__by_axis_strike_d9udxh2-fullview.png" alt="">
+                    </div>
+                    <h1 class="game-title">RETRO GAME</h1>
+                    <h3>NEBRIJA</h3>
+                    <!-- Barra de carga -->
+                    <div class="loading-bar">
+                        <div class="loading-progress"></div>
+                    </div>
+                    <!-- Menú de botones -->
+                    <div class="menu">
+                        <button>MENU</button>
+                        <button class="play-button" id="play">PLAY</button>
+                        <button>EXIT</button>
+                    </div>
+                </div>
             </div>
-            <h1 class="game-title">NEBRIJA RETRO GAME</h1>
-            <div class="loading-bar">
-                <div class="loading-progress"></div>
-            </div>
-            <div class="menu">
-                <button>PLAY</button>
-                <button>EXIT</button>
+            <!-- Corazones -->
+            <div class="hearts-container">
+                <div class="hearts">
+                    <img class="heart" src="img/vecteezy_ai-generated-pixelation-of-red-heart-in-png-image_41638505.png"
+                        alt="">
+                    <img class="heart" src="img/vecteezy_ai-generated-pixelation-of-red-heart-in-png-image_41638505.png"
+                        alt="">
+                    <img class="heart" src="img/vecteezy_ai-generated-pixelation-of-red-heart-in-png-image_41638505.png"
+                        alt="">
+                </div>
+                <!-- Corazones a la derecha -->
+                <div class="hearts-right">
+                    <img class="heart" src="img/estrella-mario-bros-png.webp" alt="">
+                    <img class="heart" src="img/estrella-mario-bros-png.webp" alt="">
+                    <img class="heart" src="img/estrella-mario-bros-png.webp" alt="">
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 </body>
+
 </html>
