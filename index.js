@@ -9,6 +9,7 @@ playButton.addEventListener("click", function () {
 
     setTimeout(function () {
         window.location.href = "main.html"; // Redirige después de la animación
+        document.body.classList.remove("glitch"); // Remueve la clase para la animación glitch
     }, 2500); // Tiempo de la animación (2.5s en este caso)
 });
 
