@@ -1,302 +1,303 @@
-      /* Estilo General */
-      body {
-          margin: 0;
-          font-family: "Press Start 2P", sans-serif;
-          background-color: #1b0424;
-          color: white;
-          height: 100vh;
-          overflow: hidden;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-      }
+/* Estilo General */
+body {
+    margin: 0;
+    font-family: "Press Start 2P", sans-serif;
+    background-color: #1b0424;
+    color: white;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-      /* Máquina Retro */
-      .retro-machine {
-          width: 100%;
-          height: 100vh;
-          background: linear-gradient(to bottom, #333, #1a1a1a);
-          border: 10px solid #222;
-          border-radius: 15px;
-          position: relative;
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-          display: flex;
-          flex-direction: column;
-          overflow: hidden;
-      }
+}
 
-      /* Panel de Botones */
-      .control-panel {
-          height: 15%;
-          background: #222;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          border-top: 5px solid #222;
-      }
+/* Máquina Retro */
+.retro-machine {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #333, #1a1a1a);
+    border: 10px solid #222;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
 
-      .joystickCont {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 40%;
-          height: 130px;
-      }
+/* Panel de Botones */
+.control-panel {
+    height: 15%;
+    background: #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 5px solid #222;
+}
 
-      .joystick {
-          width: 100px;
-          height: 30%;
-          background: radial-gradient(circle, #ff4057, #c03245);
-          border: 3px solid #900;
-          border-radius: 50%;
-          box-shadow: 0 8px #700;
-          cursor: pointer;
-          transition: transform 0.2s ease-in-out, box-shadow 0.2s;
-          position: relative;
-      }
+.joystickCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 130px;
+}
 
-      .joystick:active {
-          animation: swing 0.5s ease-in-out forwards;
-      }
+.joystick {
+    width: 100px;
+    height: 30%;
+    background: radial-gradient(circle, #ff4057, #c03245);
+    border: 3px solid #900;
+    border-radius: 50%;
+    box-shadow: 0 8px #700;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    position: relative;
+}
 
-      @keyframes swing {
-          0% {
-              transform: rotateX(0deg);
-          }
+.joystick:active {
+    animation: swing 0.5s ease-in-out forwards;
+}
 
-          25% {
-              transform: rotateX(10deg);
-          }
+@keyframes swing {
+    0% {
+        transform: rotateX(0deg);
+    }
 
-          50% {
-              transform: rotateX(-20deg);
-          }
+    25% {
+        transform: rotateX(10deg);
+    }
 
-          75% {
-              transform: rotateX(5deg);
-          }
+    50% {
+        transform: rotateX(-20deg);
+    }
 
-          100% {
-              transform: rotateX(0deg);
-          }
-      }
+    75% {
+        transform: rotateX(5deg);
+    }
 
-      .stick {
-          height: 100px;
-          width: 15%;
-          background-color: #ffffff;
-          position: absolute;
-          left: 45%;
-          top: -75%;
-          transform: translateY(-50%);
-          border-radius: 5px;
-      }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
 
-      .ball {
-          background-color: #007a7a;
-          height: 65px;
-          width: 65px;
-          position: absolute;
-          left: 20%;
-          top: -180%;
-          transform: translateY(-50%);
-          border-radius: 100%;
-          background: radial-gradient(circle, #00cfcf, #007a7a);
-      }
+.stick {
+    height: 100px;
+    width: 15%;
+    background-color: #ffffff;
+    position: absolute;
+    left: 45%;
+    top: -75%;
+    transform: translateY(-50%);
+    border-radius: 5px;
+}
 
-      .buttonCont {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          min-width: 50%;
-          height: 100%;
-      }
+.ball {
+    background-color: #007a7a;
+    height: 65px;
+    width: 65px;
+    position: absolute;
+    left: 20%;
+    top: -180%;
+    transform: translateY(-50%);
+    border-radius: 100%;
+    background: radial-gradient(circle, #00cfcf, #007a7a);
+}
 
-      .button {
-          width: 100px;
-          height: 30%;
-          background: radial-gradient(circle, #ff4057, #c03245);
-          border: 3px solid #900;
-          border-radius: 50%;
-          box-shadow: 0 8px #700;
-          cursor: pointer;
-          transition: transform 0.2s, box-shadow 0.2s;
-          margin: 0 20px;
-          /* Separación entre botones */
-      }
+.buttonCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50%;
+    height: 100%;
+}
 
-      .button.blue {
-          background: radial-gradient(circle, #00cfcf, #007a7a);
-          border: 3px solid #005757;
-          box-shadow: 0 8px #005757;
-      }
+.button {
+    width: 100px;
+    height: 30%;
+    background: radial-gradient(circle, #ff4057, #c03245);
+    border: 3px solid #900;
+    border-radius: 50%;
+    box-shadow: 0 8px #700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 0 20px;
+    /* Separación entre botones */
+}
 
-      .button.yellow {
-          background: radial-gradient(circle, #ffc545, #c09430);
-          border: 3px solid #8a6c1e;
-          box-shadow: 0 8px #8a6c1e;
-      }
+.button.blue {
+    background: radial-gradient(circle, #00cfcf, #007a7a);
+    border: 3px solid #005757;
+    box-shadow: 0 8px #005757;
+}
 
-      .button:active {
-          transform: translateY(4px);
-          box-shadow: 0 2px rgb(31, 31, 31);
-      }
+.button.yellow {
+    background: radial-gradient(circle, #ffc545, #c09430);
+    border: 3px solid #8a6c1e;
+    box-shadow: 0 8px #8a6c1e;
+}
 
-      /* Títulos de secciones */
-      .section-title {
-          font-size: 1.2rem;
-          color: #00ff00;
-          border-bottom: 2px solid #00ff00;
-          margin-bottom: 20px;
-          padding-bottom: 5px;
-      }
+.button:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px rgb(31, 31, 31);
+}
 
-      /* Pantalla de Contenido Mejorada */
-      .retro-screen {
-          flex: 1;
-          background: rgb(20, 20, 20);
-          border: 5px solid #444;
-          margin: 10px;
-          border-radius: 20px;
-          box-shadow: inset 0 0 15px #000;
-          overflow-y: auto;
-          color: #00ff00;
-          padding: 40px 20px;
-          font-size: 1rem;
-          text-align: justify;
-          scrollbar-width: none;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 20px;
-      }
+/* Títulos de secciones */
+.section-title {
+    font-size: 1.2rem;
+    color: #00ff00;
+    border-bottom: 2px solid #00ff00;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
 
-      .retro-screen h2 {
-          text-align: center;
-          color: #ffff00;
-          font-size: 2.5rem;
-          margin-top: 0;
-          text-transform: uppercase;
-          letter-spacing: 3px;
-          text-shadow: 2px 2px 0px #ff0000, 4px 4px 0px #00ff00, 6px 6px 0px #0000ff;
-      }
+/* Pantalla de Contenido Mejorada */
+.retro-screen {
+    flex: 1;
+    background: rgb(20, 20, 20);
+    border: 5px solid #444;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: inset 0 0 15px #000;
+    overflow-y: auto;
+    color: #00ff00;
+    padding: 40px 20px;
+    font-size: 1rem;
+    text-align: justify;
+    scrollbar-width: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-      .title {
+.retro-screen h2 {
+    text-align: center;
+    color: #ffff00;
+    font-size: 2.5rem;
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 0px #ff0000, 4px 4px 0px #00ff00, 6px 6px 0px #0000ff;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: #00ff00;
+    text-transform: uppercase;
+    border-bottom: 2px solid #00ff00;
+    margin: 20px 0 15px;
+    padding-bottom: 5px;
+}
+
+.seccion {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+
+.title-sccion {
+    width: 100%;
+}
+
+/* Tarjetas Mejoradas */
+.card {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(135deg, #222, #333);
+    border: 2px solid #555;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.card img {
+    width: 200px;
+    height: 80%;
+    margin-right: 20px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+}
+
+.card-content {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80%;
+}
+
+.card-content h3 {
+    color: #ffcc00;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 5px #000;
+}
+
+.card-content p {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Pie de página */
+.developed-by {
+    width: 100%;
+    font-size: 1rem;
+    color: #888;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    border-top: 1px solid #444;
+    padding-top: 15px;
+}
+
+.developed-by span {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #ffff00;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .card-img {
         width: 100%;
-        text-align: center;
-      }
-
-      .section-title {
-          font-size: 1.5rem;
-          color: #00ff00;
-          text-transform: uppercase;
-          border-bottom: 2px solid #00ff00;
-          margin: 20px 0 15px;
-          padding-bottom: 5px;
-      }
-
-      .seccion {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        width: 100%;
-      }
-
-      .title-sccion {
-        width: 100%;
-      }
-
-       /* Tarjetas Mejoradas */
-    .card {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        gap: 30px;
-        background: linear-gradient(135deg, #222, #333);
-        border: 2px solid #555;
-        border-radius: 15px;
-        padding: 15px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-        transition: transform 0.3s, box-shadow 0.3s;
     }
-
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    }
-
-    .card img {
-        width: 200px;
-        height: 80%;
-        margin-right: 20px;
-        border-radius: 10px;
-        border: 2px solid #333;
-        box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
-    }
-
-    .card-content {
-        width: 80%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        height: 80%;
-    }
-
-    .card-content h3 {
-        color: #ffcc00;
-        font-size: 1.2rem;
-        text-shadow: 1px 1px 5px #000;
-    }
-
     .card-content p {
-        color: #ccc;
-        font-size: 1rem;
-        line-height: 1.6;
+        font-size: 0.9rem;
     }
-
-    /* Pie de página */
-    .developed-by {
-        width: 100%;
-        font-size: 1rem;
-        color: #888;
+    .title-sccion {
         text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 30px;
-        border-top: 1px solid #444;
-        padding-top: 15px;
     }
-
+    .card-content h3 {
+        text-align: center;
+        line-height: 1.5;
+    }
     .developed-by span {
-        margin-top: 10px;
-        font-size: 1.2rem;
-        color: #ffff00;
-        font-weight: bold;
+        line-height: 1.5;
     }
-
-    @media screen and (max-width: 768px) {
-        .card-img {
-            width: 100%;
-        }
-        .card-content p {
-            font-size: 0.9rem;
-        }
-        .title-sccion {
-            text-align: center;
-        }
-        .card-content h3 {
-            text-align: center;
-            line-height: 1.5;
-        }
-        .developed-by span {
-            line-height: 1.5;
-        }
-        .title {
-            line-height: 1.5;
-        }
+    .title {
+        line-height: 1.5;
     }
+}
