@@ -17,12 +17,16 @@ cartel.addEventListener("click", function () {
     document.body.removeChild(link); // Elimina el <a> del DOM
 })
 
+const glitch = new Audio('img/glitch.mp3'); 
+glitch.loop = true;
+
 playButton.addEventListener("click", function () {
     document.body.classList.add("glitch"); // Añade la clase para la animación glitch
-
+    glitch.play();
     setTimeout(function () {
         window.location.href = "main.html"; // Redirige después de la animación
         document.body.classList.remove("glitch"); // Remueve la clase para la animación glitch
+        
     }, 2500); // Tiempo de la animación (2.5s en este caso)
 });
 
